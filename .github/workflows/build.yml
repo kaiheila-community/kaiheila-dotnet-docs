@@ -17,7 +17,10 @@ jobs:
         with:
           dotnet-version: '5.0'
       - name: Setup DocFx
-        run: brew install docfx --ignore-dependencies
+        run: |
+          wget https://github.com/dotnet/docfx/releases/download/v2.56.6/docfx.zip
+          unzip docfx.zip -d docfx
+          chmod +x docfx/docfx
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -27,7 +30,7 @@ jobs:
       - name: Lint Test
         run: npm run lint
       - name: Build
-        run: docfx docfx.json
+        run: docfx/docfx docfx.json
           
   deploy:
     name: Deploy
@@ -45,7 +48,10 @@ jobs:
         with:
           dotnet-version: '5.0'
       - name: Setup DocFx
-        run: brew install docfx --ignore-dependencies
+        run: |
+          wget https://github.com/dotnet/docfx/releases/download/v2.56.6/docfx.zip
+          unzip docfx.zip -d docfx
+          chmod +x docfx/docfx
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -55,7 +61,7 @@ jobs:
       - name: Lint Test and Fix
         run: npm run lint:fix
       - name: Build
-        run: docfx docfx.json
+        run: docfx/docfx docfx.json
       - name: Deploy
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
