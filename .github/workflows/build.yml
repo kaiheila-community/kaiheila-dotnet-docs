@@ -52,6 +52,7 @@ jobs:
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
+          chmod 777 . -R
           rm -rf .git/
           mv _site/ site/
           cd site
