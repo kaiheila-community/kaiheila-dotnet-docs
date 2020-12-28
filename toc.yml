@@ -1,5 +1,7 @@
-- name: Articles
-  href: articles/
-- name: Api Documentation
+- name: 教程
+  href: articles/tutorials/
+- name: 指南
+  href: articles/guides/
+- name: API 浏览器
   href: api/
   homepage: api/index.md

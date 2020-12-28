@@ -39,6 +39,8 @@
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
+      "default",
+      "common",
       "default(zh-cn)",
       "templates/material",
       "lightbox-featherlight"
