@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "docfx docfx.json --serve",
-    "build": "docfx docfx.json"
+    "build": "docfx docfx.json",
+    "lint": "markdownlint \"**/*.md\" --ignore-path .gitignore",
+    "lint:fix": "markdownlint \"**/*.md\" --ignore-path .gitignore --fix"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/kaiheila-community/kaiheila-dotnet-docs/issues"
   },
-  "homepage": "https://github.com/kaiheila-community/kaiheila-dotnet-docs#readme"
+  "homepage": "https://github.com/kaiheila-community/kaiheila-dotnet-docs#readme",
+  "dependencies": {
+    "markdownlint-cli": "^0.26.0"
+  }
 }
