@@ -58,6 +58,9 @@ jobs:
           git config --global user.email "vboxbot@outlook.com"
           git config --global user.name "VBox Deploy Bot"
           git init
+          echo inited
           git add -A
+          echo added
           git commit -m 'chore':' 🤖 GitHub Pages Deploy in GitHub Actions'
+          echo committed
           git push -f https://${DEPLOY_TOKEN}@github.com/Afanyiyu/kaiheila-dotnet-docs-deploy.git master
