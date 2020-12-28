@@ -52,6 +52,7 @@ jobs:
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
+          rm -rf .git/
           cd _site
           git config --global user.email "vboxbot@outlook.com"
           git config --global user.name "VBox Deploy Bot"
