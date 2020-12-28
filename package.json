@@ -1,0 +1,24 @@
+{
+  "name": "kaiheila-dotnet-docs",
+  "version": "0.1.0",
+  "description": "开黑啦 .NET 5 SDK 文档站。",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docfx docfx.json --serve",
+    "build": "docfx docfx.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaiheila-community/kaiheila-dotnet-docs.git"
+  },
+  "keywords": [
+    "kaiheila",
+    "dotnet"
+  ],
+  "author": "Il Harper <afanyiyu@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaiheila-community/kaiheila-dotnet-docs/issues"
+  },
+  "homepage": "https://github.com/kaiheila-community/kaiheila-dotnet-docs#readme"
+}
