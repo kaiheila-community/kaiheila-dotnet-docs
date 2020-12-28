@@ -12,6 +12,12 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0'
+      - name: Setup DocFx
+        run: brew install docfx
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -21,9 +27,7 @@ jobs:
       - name: Lint Test
         run: npm run lint
       - name: Build
-        uses: nikeee/docfx-action@v1.0.0
-        with:
-          args: docfx.json
+        run: docfx docfx.json
           
   deploy:
     name: Deploy
@@ -36,6 +40,12 @@ jobs:
         with:
           submodules: recursive
           fetch-depth: 0
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0'
+      - name: Setup DocFx
+        run: brew install docfx
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -45,15 +55,11 @@ jobs:
       - name: Lint Test and Fix
         run: npm run lint:fix
       - name: Build
-        uses: nikeee/docfx-action@v1.0.0
-        with:
-          args: docfx.json
+        run: docfx docfx.json
       - name: Deploy
         env:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
-          chmod 777 . -R
-          rm -rf .git/
           mv _site/ site/
           cd site
           git config --global user.email "vboxbot@outlook.com"
