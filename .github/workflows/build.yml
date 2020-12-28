@@ -1,0 +1,61 @@
+name: 'Build and Test'
+
+on: push
+
+jobs:
+  test:
+    name: Test
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: NPM Install
+        run: npm i
+      - name: Lint Test
+        run: npm run lint
+      - name: Build
+        uses: nikeee/docfx-action@v1.0.0
+        with:
+          args: docfx.json
+          
+  deploy:
+    name: Deploy
+    needs: [test]
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: NPM Install
+        run: npm i
+      - name: Lint Test and Fix
+        run: npm run lint:fix
+      - name: Build
+        uses: nikeee/docfx-action@v1.0.0
+        with:
+          args: docfx.json
+      - name: Deploy
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        run: |
+          cd _site
+          git config --global user.email "vboxbot@outlook.com"
+          git config --global user.name "VBox Deploy Bot"
+          git init
+          git add -A
+          git commit -m 'chore':' 🤖 GitHub Pages Deploy in GitHub Actions'
+          git push -f https://${DEPLOY_TOKEN}@github.com/Afanyiyu/kaiheila-dotnet-docs-deploy.git master
