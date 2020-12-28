@@ -1,6 +1,9 @@
-###############
-#    folder   #
-###############
+# VSCode
+
+.vscode/
+
+# DocFx
+
 /**/DROP/
 /**/TEMP/
 /**/packages/
