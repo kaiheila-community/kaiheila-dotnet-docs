@@ -1,5 +1,10 @@
 {
   "default": true,
   "line-length": false,
-  "single-h1": false
+  "single-h1": false,
+  "no-trailing-punctuation": false,
+  "no-inline-html": false,
+  "no-duplicate-header": false,
+  "header-increment": false,
+  "ol-prefix": false
 }
