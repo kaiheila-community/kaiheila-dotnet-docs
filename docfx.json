@@ -22,7 +22,15 @@
     ],
     "resource": [
       {
-        "files": ["assets/**"]
+        "files": [
+          "assets/**",
+          "articles/**.png",
+          "articles/**.jpg",
+          "articles/**.gif",
+          "articles/**.webp",
+          "articles/**.webm",
+          "articles/**.mp4"
+        ]
       }
     ],
     "overwrite": [

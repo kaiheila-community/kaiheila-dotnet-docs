@@ -9,6 +9,8 @@ title: 第一部分：创建一个「回显」机器人
 
 在第一部分，我们将会创建一个「回显」机器人。这个机器人会将用户 At 它时候所说的话发回到频道中。
 
+![「回显」示例](./images/echo-sample.png)
+
 注意：**你无需任何的编程基础！** 这一部分的教程足够简单，你只需要将教程中的代码复制粘贴到你的项目中即可。但是，在这部分教程结束之后，你可能需要稍微掌握一点 「[C#](https://docs.microsoft.com/zh-cn/dotnet/csharp/tour-of-csharp/)」 方面的知识才能更好地开发出你想要的机器人，而这些知识一点也不难。
 
 如果你在阅读教程的时候或自己开发的时候有任何问题，你都可以来「[机器人社区](https://kaihei.co/XoL2WY)」服务器的「开发」分组提问。
@@ -213,7 +215,9 @@ bot.Event.Subscribe(x => // 订阅机器人事件，并处理得到的事件x
 
 # [Visual Studio](#tab/visual-studio)
 
-按下播放键，你的机器人即会开始运行。
+按下播放键，你的机器人即会开始运行。你可以 At 这个机器人来测试。
+
+![「回显」示例](./images/echo-sample.png)
 
 # [Visual Studio Code](#tab/visual-studio-code)
 
