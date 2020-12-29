@@ -215,9 +215,7 @@ bot.Event.Subscribe(x => // 订阅机器人事件，并处理得到的事件x
 
 # [Visual Studio](#tab/visual-studio)
 
-按下播放键，你的机器人即会开始运行。你可以 At 这个机器人来测试。
-
-![「回显」示例](./images/echo-sample.png)
+按下播放键，你的机器人即会开始运行。
 
 # [Visual Studio Code](#tab/visual-studio-code)
 
@@ -232,6 +230,8 @@ dotnet run
 ***
 
 现在，在「开发者中心」中跳转到「邀请」页面，将机器人邀请到你的服务器，开始使用你自己创建的机器人吧！
+
+![「回显」示例](./images/echo-sample.png)
 
 ## 附：程序的完整代码
 
