@@ -1,0 +1,15 @@
+.selector-button {
+  background-color: var(--header-bg-color);
+  color: var(--header-ft-color);
+  border: 1.5px solid var(--header-bg-color);
+  border-radius: 5px;
+  transition: box-shadow 0.2s ease-in-out;
+  margin: 12px;
+  padding: 8px 16px;
+  font-size: 18px;
+}
+
+.selector-button:hover {
+  box-shadow: 0 0 18px 0 var(--header-bg-color);
+  color: var(--header-ft-color);
+}

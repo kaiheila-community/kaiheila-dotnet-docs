@@ -51,7 +51,8 @@
       "common",
       "default(zh-cn)",
       "templates/material",
-      "templates/lightbox-featherlight"
+      "templates/lightbox-featherlight",
+      "templates/addon"
     ],
     "postProcessors": ["ExtractSearchIndex"],
     "markdownEngineName": "markdig",
